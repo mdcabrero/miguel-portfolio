@@ -1,0 +1,100 @@
+/* ==========================================================================
+   CSS Reset - Modern & Practical
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Document & Typography Baseline */
+
+html {
+  /* Prevent font size inflation */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+
+/* Typography Improvements */
+
+
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Get rid of default styling for link elements */
+a {
+  color: inherit; 
+  text-decoration: inherit; 
+}
+
+
+
+/* Form Elements */
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Media Elements */
+img, picture {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* List Elements */
+
+/* Remove list styles when role="list" is used */
+ul, ol {
+  list-style: none;
+}
+
+
+
+
+/* ==========================================================================
+   Font Imports - NeueMontreal Family
+   ========================================================================== */
+
+/* NeueMontreal Book */
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('../fonts/PPNeueMontreal-Book.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* NeueMontreal Medium */
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('../fonts/PPNeueMontreal-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+

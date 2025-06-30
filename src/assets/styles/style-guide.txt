@@ -1,0 +1,20 @@
+We will use a three-layer approach to structure styling throughout the site: (global → layout → component-specific). 
+It will work as follows 
+
+// 1. base.scss - Foundation layer
+// CSS reset, font imports, CSS custom properties (variables)
+// Nothing that creates visual styles, just the groundwork
+
+// 2. main.scss - Layout and composition
+// spacing, arrangement & high-level structure for container elements within components
+// Focus on how component arrangement in the page and their internal layout
+
+
+// 3. Component <style scoped> - Specific decoration
+// Your current level 3 - component-specific visual styling
+
+
+Additionally, there  might be a utilities.scss for helper classes and accessiblity:
+
+// Small, single-purpose classes for common patterns
+// .visually-hidden, .flex-center, .text-truncate, etc.

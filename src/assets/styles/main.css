@@ -1,0 +1,51 @@
+@import './base.css';
+
+body {
+  font-family: 'NeueMontreal', Arial, sans-serif;
+  line-height: 1.5;
+  background-color: black;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300; /* Regular */
+}
+
+
+.portfolio-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.hero {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 99dvh;
+    padding-inline: 2rem;
+    padding-top: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 12rem;
+}
+
+.portfolio-bio {
+  margin-top: 10rem;
+  max-width: 70%;
+}
+
+
+.footer {
+    padding: 3rem 3rem 1rem;
+    min-height: 70dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.509);
+}
+
