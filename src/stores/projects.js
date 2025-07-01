@@ -3,6 +3,8 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import hundredMockup from '@/assets/graphics/hundred-mockup.png'
+import globlMockup from '@/assets/graphics/globl-mockup.png'
+import voxelMockup from '@/assets/graphics/voxel-mockup.png'
 
 
 export const useProjectsStore = defineStore('projects', () => {
@@ -15,9 +17,15 @@ export const useProjectsStore = defineStore('projects', () => {
         },
         {
             id: 2,
-            title: 'Project Two',
+            title: 'GLOBL Tech',
             description: 'Another amazing project description',
-            image: hundredMockup
+            image: globlMockup
+        },
+        {
+            id: 3,
+            title: 'Voxel Labs',
+            description: 'Another amazing project description',
+            image: voxelMockup
         }
     ])
     

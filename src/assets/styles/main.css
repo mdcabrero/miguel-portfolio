@@ -7,7 +7,15 @@ body {
   color: white;
   -webkit-font-smoothing: antialiased;
   font-weight: 300; /* Regular */
+  background: linear-gradient(135deg, 
+                #101015 0%, 
+                #0b0b0f 20%, 
+                #000000 40%, 
+                #08080c 60%, 
+                #06060d 80%, 
+                #000000 100%);
 }
+
 
 
 .portfolio-nav {
@@ -25,6 +33,7 @@ body {
     min-height: 99dvh;
     padding-inline: 2rem;
     padding-top: 1rem;
+
 }
 
 main {
@@ -48,4 +57,5 @@ main {
     justify-content: space-between;
     border-top: 1px solid rgba(255, 255, 255, 0.509);
 }
+
 

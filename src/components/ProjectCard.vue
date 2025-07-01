@@ -24,13 +24,42 @@ defineProps({
 
 
 .project-card {
+    position: relative;
       display: grid;
     grid-template-rows: auto 1fr;
     width: 75vw;
-    background-color: rgb(0, 0, 31);
+    background: linear-gradient(135deg, 
+        #000000 0%, 
+        #18181e 25%, 
+        #06080a 50%, 
+        #050509 75%, 
+        #070707 100%);
+    border: 1px solid rgba(103, 106, 154, 0.267);
     border-radius: 1.5rem;
     overflow: hidden;
+    box-shadow: 0px 0px 4px 0px rgba(66, 66, 81, 0.4)
+
 }
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0.01) 50%,
+        rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+}
+
+.project-card:not(:first-child) {
+    margin-top: 5rem;
+}
+
+
 
 .project-bio {
     display: flex;
@@ -54,7 +83,7 @@ defineProps({
 .project-preview {
     grid-row: 2;
     display: flex;
-    width: 85%;
+    width: 80%;
     justify-self: center;
     margin-bottom: -5%; /* Add negative spacing effect*/
 }

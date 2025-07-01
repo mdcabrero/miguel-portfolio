@@ -1,7 +1,5 @@
 <template>
-
  <section class="portfolio-bio"> 
-
     <div class="bio">
       <p>
         Interdisciplinary product researcher & designer, currently reading curating and listening to
@@ -15,43 +13,36 @@
       <div class="skill-row">
         <h3 class="skill-category">Tech Stack</h3>
         <div class="skill-icons">
-          <img src="../assets/graphics/miguel-logo.svg" alt="CSS3" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="JavaScript" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="Vue.js" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="Node.js" class="skill-icon">
+          <img src="../assets/icons/html.svg" alt="HTML5" class="skill-icon">
+          <img src="../assets/icons/css.svg" alt="CSS3" class="skill-icon">
+          <img src="../assets/icons/sass.svg" alt="Sass" class="skill-icon extra-height">
+          <img src="../assets/icons/javascript.svg" alt="JavaScript" class="skill-icon">
+          <img src="../assets/icons/nodejs.svg" alt="Node.js" class="skill-icon">
+          <img src="../assets/icons/vue.svg" alt="Vue.js" class="skill-icon">
+          <img src="../assets/icons/gsap.svg" alt="GSAP" class="skill-icon wide-icon">
+      
         </div>
       </div>
 
-      <!-- Software Row -->
+      <!-- Design Tools Row -->
       <div class="skill-row">
-        <h3 class="skill-category">Software</h3>
+        <h3 class="skill-category">Design Tools</h3>
         <div class="skill-icons">
-          <img src="../assets/graphics/miguel-logo.svg" alt="CSS3" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="JavaScript" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="Vue.js" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="Node.js" class="skill-icon">
-        </div>
-      </div>
-
-      <!-- Skills Row -->
-      <div class="skill-row">
-        <h3 class="skill-category">Skills</h3>
-        <div class="skill-icons">
-          <img src="../assets/graphics/miguel-logo.svg" alt="CSS3" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="JavaScript" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="Vue.js" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="Node.js" class="skill-icon">
+          <img src="../assets/icons/figma.svg" alt="Figma" class="skill-icon">
+          <img src="../assets/icons/affinity-photo.svg" alt="Affinity Photo" class="skill-icon">
+          <img src="../assets/icons/affinity-designer.svg" alt="Affinity Designer" class="skill-icon">
+          <img src="../assets/icons/blender.svg" alt="Blender" class="skill-icon">
+          <img src="../assets/icons/midjourney.svg" alt="Midjourney" class="skill-icon">
         </div>
       </div>
 
       <!-- Other Row -->
       <div class="skill-row">
-        <h3 class="skill-category">Other</h3>
+        <h3 class="skill-category">AI APIs</h3>
         <div class="skill-icons">
-          <img src="../assets/graphics/miguel-logo.svg" alt="CSS3" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="JavaScript" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="Vue.js" class="skill-icon">
-          <img src="../assets/graphics/miguel-logo.svg" alt="Node.js" class="skill-icon">
+          <img src="../assets/icons/anthropic.svg" alt="Anthropic" class="skill-icon ai-icon">
+          <img src="../assets/icons/openai.svg" alt="OpenAI" class="skill-icon ai-icon ">
+          <img src="../assets/icons/perplexity.svg" alt="Perplexity" class="skill-icon ai-icon">
         </div>
       </div>
 
@@ -67,7 +58,6 @@
       </div>
     </div>
 </section>
-
 </template>
 
 <style scoped>
@@ -107,7 +97,7 @@
 }
 
 .skill-category {
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 400;
   margin: 0;
   color: #fff;
@@ -115,15 +105,37 @@
 
 .skill-icons {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
   justify-content: end;
 }
 
 .skill-icon {
-  width: 3rem;
-  height: auto;
+  width: 3.5rem;
+  height: 4.5rem;
   object-fit: contain;
+  filter: grayscale(100%) ;
+}
+
+
+/* Rather than creating additional classes for icons, style each icon that stands out too much separately
+
+.wide-icon {
+  width: auto;
+  height: 2.75rem;
+}
+
+.extra-height {
+  width: auto;
+  height: 3rem;
+}
+
+*/
+
+.ai-icon {
+  width: 3.75rem;
+  height: 3.25rem;
+  filter: brightness(75%);
 }
 
 .capabilities-row {
@@ -139,7 +151,7 @@
 }
 
 .capability-item {
-  font-size: 1.85rem;
+  font-size: 1.9rem;
   font-weight: 300;
   color: #e5e1e1;
   text-align: right;
