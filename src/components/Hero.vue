@@ -36,12 +36,29 @@ import Navigation from '@/components/Navigation.vue'
 }
 
 .hero-title {
+    color: #EDEEF0;
     font-weight: 500;
     font-size: 10vw;
     letter-spacing: -0.25vw;
+    background: linear-gradient(
+                to bottom,
+                #ffffff 0%,
+                #f8f9fa 20%,
+                #e9ecef 40%,
+                #CFD0D4 60%,
+                #adb5bd 80%,
+                #868c97 100%
+            );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #EDEEF0; /* Fallback */
+
+
 }
 
 .hero-subtitle {
+    color: #dedfe4;
     line-height: 1.1;
     font-size: 2.5rem;
     font-weight: 300;

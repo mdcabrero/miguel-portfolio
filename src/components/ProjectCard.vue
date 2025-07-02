@@ -27,33 +27,71 @@ defineProps({
     position: relative;
       display: grid;
     grid-template-rows: auto 1fr;
-    width: 75vw;
-    background: linear-gradient(135deg, 
-        #000000 0%, 
-        #18181e 25%, 
-        #06080a 50%, 
-        #050509 75%, 
-        #070707 100%);
+    width: 70vw;
+  background: linear-gradient(100deg, 
+    #08090d 0%,
+    #111318 25%,
+    #040506 45%,
+    #0f1115 75%,
+    #000000 100%);
     border: 1px solid rgba(103, 106, 154, 0.267);
     border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0px 0px 4px 0px rgba(66, 66, 81, 0.4)
-
-}
+   box-shadow: 
+   /* Main shadow */
+                0px 0px 4px rgba(79, 106, 195, 0.306),
+                inset 0 1.25px 0 rgba(149, 164, 224, 0.55),
+                inset 0 -3px 0 rgba(24, 30, 66, 0.25);
+        }
 
 .project-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.03) 0%,
-        rgba(255, 255, 255, 0.01) 50%,
-        rgba(255, 255, 255, 0.05) 100%);
-    pointer-events: none;
+    inset: 0;
+    padding: 1.5px;
+    background: linear-gradient(
+        240deg,
+        transparent 0%,
+        transparent 25%,
+        transparent 50%,
+        transparent 75%,
+        transparent 85%,
+        rgba(157, 179, 212, 0.701) 100%
+    );
+    border-radius: 1.6rem;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: exclude;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 1;
+
 }
+
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 1.3rem;
+    background: linear-gradient(
+        135deg,
+        rgba(61, 94, 133, 0.15) 0%,
+        rgba(109, 116, 131, 0.08) 25%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.08) 75%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.25;
+}
+
+
+
+
+
+
+
 
 .project-card:not(:first-child) {
     margin-top: 5rem;
@@ -61,22 +99,28 @@ defineProps({
 
 
 
+
 .project-bio {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
     margin-block: 4rem;
-    margin-inline: 3rem;
+    margin-inline: 4rem;
 }
 
 .project-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 500;
+     text-shadow:
+      0 0 2px #fff,
+      0 0 4px #0b49c5;
 }
+
 
 .project-description {
     font-size: 1.5rem;
     font-weight: 300;
+    color: #b7bfce;
 }
 
 
@@ -85,7 +129,7 @@ defineProps({
     display: flex;
     width: 80%;
     justify-self: center;
-    margin-bottom: -5%; /* Add negative spacing effect*/
+    margin-bottom: -2.5%; /* Add negative spacing effect*/
 }
 
 </style>

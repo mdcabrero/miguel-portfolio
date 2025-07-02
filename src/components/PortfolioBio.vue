@@ -15,11 +15,12 @@
         <div class="skill-icons">
           <img src="../assets/icons/html.svg" alt="HTML5" class="skill-icon">
           <img src="../assets/icons/css.svg" alt="CSS3" class="skill-icon">
-          <img src="../assets/icons/sass.svg" alt="Sass" class="skill-icon extra-height">
+          <img src="../assets/icons/sass.svg" alt="Sass" class="skill-icon sass">
+           <img src="../assets/icons/gsap.svg" alt="GSAP" class="skill-icon wide-icon gsap">
           <img src="../assets/icons/javascript.svg" alt="JavaScript" class="skill-icon">
           <img src="../assets/icons/nodejs.svg" alt="Node.js" class="skill-icon">
           <img src="../assets/icons/vue.svg" alt="Vue.js" class="skill-icon">
-          <img src="../assets/icons/gsap.svg" alt="GSAP" class="skill-icon wide-icon">
+         
       
         </div>
       </div>
@@ -28,11 +29,11 @@
       <div class="skill-row">
         <h3 class="skill-category">Design Tools</h3>
         <div class="skill-icons">
-          <img src="../assets/icons/figma.svg" alt="Figma" class="skill-icon">
+          <img src="../assets/icons/figma.svg" alt="Figma" class="skill-icon figma">
           <img src="../assets/icons/affinity-photo.svg" alt="Affinity Photo" class="skill-icon">
           <img src="../assets/icons/affinity-designer.svg" alt="Affinity Designer" class="skill-icon">
-          <img src="../assets/icons/blender.svg" alt="Blender" class="skill-icon">
-          <img src="../assets/icons/midjourney.svg" alt="Midjourney" class="skill-icon">
+          <img src="../assets/icons/blender.svg" alt="Blender" class="skill-icon blender">
+          <img src="../assets/icons/midjourney.svg" alt="Midjourney" class="skill-icon midjourney">
         </div>
       </div>
 
@@ -73,8 +74,6 @@
   letter-spacing: -1px;
 }
 
-
-
 .portfolio-skills {
   display: flex;
   flex-direction: column;
@@ -86,6 +85,7 @@
   align-items: center;
   padding: 1.5rem 0;
   border-bottom: 1px solid #ffffff84;
+  transition: all 0.3s ease;
 }
 
 .skill-row:first-child {
@@ -114,29 +114,51 @@
   width: 3.5rem;
   height: 4.5rem;
   object-fit: contain;
-  filter: grayscale(100%) ;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
+/* Hover effect: remove grayscale when hovering over the skill row */
+.skill-row:hover .skill-icon {
+  filter: brightness(100%) grayscale(0%);
+}
 
-/* Rather than creating additional classes for icons, style each icon that stands out too much separately
+/* Size adjustments for some particular icons */
 
-.wide-icon {
+.sass {
   width: auto;
-  height: 2.75rem;
+  height: 3.5rem;
 }
 
-.extra-height {
+
+.gsap {
   width: auto;
-  height: 3rem;
+  height: 2.5rem;
 }
 
-*/
+.figma {
+  width: auto;
+  height: 3.75rem;
+}
+
+.blender {
+  width: auto;
+  height: 3.5rem;
+}
+
+.midjourney {
+  filter: brightness(75%);
+}
+
 
 .ai-icon {
   width: 3.75rem;
   height: 3.25rem;
   filter: brightness(75%);
+  transition: filter 0.3s ease;
 }
+
+
 
 .capabilities-row {
   grid-template-columns: 200px 1fr;
@@ -147,7 +169,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-
 }
 
 .capability-item {

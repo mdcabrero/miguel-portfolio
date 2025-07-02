@@ -7,13 +7,13 @@ body {
   color: white;
   -webkit-font-smoothing: antialiased;
   font-weight: 300; /* Regular */
-  background: linear-gradient(135deg, 
-                #101015 0%, 
-                #0b0b0f 20%, 
+  background: linear-gradient(220deg, 
+                #000000 0%, 
+                #0e1115 20%, 
                 #000000 40%, 
-                #08080c 60%, 
-                #06060d 80%, 
-                #000000 100%);
+                #101318 60%, 
+                #000000 80%, 
+                #0c0b18 100%);
 }
 
 
@@ -50,12 +50,27 @@ main {
 
 
 .footer {
+    position: relative;
     padding: 3rem 3rem 1rem;
     min-height: 70dvh;
     display: flex;
+    overflow-y: hidden;
     flex-direction: column;
     justify-content: space-between;
     border-top: 1px solid rgba(255, 255, 255, 0.509);
+       background: linear-gradient(
+        to bottom,
+        #000000 0%,
+        #0c0d10 25%,       
+        #0d1115 50%,       
+        #101318 75%,        
+        #0c0f13 100%       
+    );
+    border-top: 1px solid rgba(207, 208, 212, 0.25);
+    box-shadow: 
+        inset 0 0.5px 0 rgba(207, 208, 212, 0.25);
 }
+
+
 
 
