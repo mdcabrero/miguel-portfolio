@@ -1,6 +1,7 @@
 <template>
- <section class="portfolio-bio"> 
+ <section  ref="portfolioBioRef" class="portfolio-bio"> 
     <div class="bio">
+      <span> About </span>
       <p>
         Interdisciplinary product researcher & designer, currently reading curating and listening to
        I love to use lots of interactive design, 3D, behavioral based research, and other experimental elements to create ideal launches
@@ -61,17 +62,52 @@
 </section>
 </template>
 
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import { usePortfolioBioAnimation, useSkillsAnimation } from '@/utils/animations.js'
+
+const portfolioBioRef = ref(null)
+
+// Initialize animations
+const { initBioTextAnimation } = usePortfolioBioAnimation()
+const { initSkillsAnimation } = useSkillsAnimation()
+
+onMounted(async () => {
+  if (portfolioBioRef.value) {
+    // Initialize the synchronized bio and skills animation
+    await initBioTextAnimation(portfolioBioRef.value)
+    
+    // Initialize hover animations for skills
+    await initSkillsAnimation(portfolioBioRef.value.querySelector('.portfolio-skills'))
+  }
+})
+</script>
+
 <style scoped>
 
 .bio {
   margin-bottom: 4rem;
 }
 
+.bio span {
+  font-size: 1.5rem;
+  color: #c8d7e5cc;
+
+}
+
 .bio p {
   font-size: 3rem;
   line-height: 1.2;
-  font-weight: 400;
-  letter-spacing: -1px;
+  margin-top: 0.75rem;
+  font-weight: 300;
+ 
+}
+
+/* Add styles for animated words */
+.bio p :deep(.bio-word) {
+  display: inline-block;
+  margin-right: 0.1em;
 }
 
 .portfolio-skills {
@@ -118,10 +154,13 @@
   transition: filter 0.3s ease;
 }
 
-/* Hover effect: remove grayscale when hovering over the skill row */
+/* Hover effect: remove grayscale when hovering over the skill row handled by GSAP now, left as fallback
+
 .skill-row:hover .skill-icon {
   filter: brightness(100%) grayscale(0%);
 }
+
+*/
 
 /* Size adjustments for some particular icons */
 

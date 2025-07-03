@@ -1,5 +1,5 @@
 <template>
-    <article class="project-card">
+    <article class="project-card" ref="projectCardRef">
         <div class="project-bio">
             <h2 class="project-title">{{ project.title }}</h2>
             <p class="project-description">{{ project.description }}</p>
@@ -12,11 +12,25 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import { useProjectCardAnimation } from '@/utils/animations.js'
+
 defineProps({
     project: {
         type: Object,
         required: true
+    },
+     index: {
+        type: Number,
+        default: 0
     }
+})
+
+const projectCardRef = ref(null)
+const { initProjectCardAnimation } = useProjectCardAnimation()
+
+onMounted(() => {
+    initProjectCardAnimation(projectCardRef.value)
 })
 </script>
 
@@ -27,7 +41,8 @@ defineProps({
     position: relative;
       display: grid;
     grid-template-rows: auto 1fr;
-    width: 70vw;
+    will-change: width;
+    width: 65vw;
   background: linear-gradient(100deg, 
     #08090d 0%,
     #111318 25%,
@@ -94,7 +109,7 @@ defineProps({
 
 
 .project-card:not(:first-child) {
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 
 
@@ -109,11 +124,12 @@ defineProps({
 }
 
 .project-title {
+    color: #EDEEF0;
     font-size: 3rem;
     font-weight: 500;
      text-shadow:
-      0 0 2px #fff,
-      0 0 4px #0b49c5;
+      0 0 3px #e0e9ee5d,
+      0 0 4.5px #0b49c5;
 }
 
 
