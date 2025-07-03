@@ -63,26 +63,8 @@
 </template>
 
 
-<script setup>
-import { ref, onMounted } from 'vue'
-import { usePortfolioBioAnimation, useSkillsAnimation } from '@/utils/animations.js'
 
-const portfolioBioRef = ref(null)
 
-// Initialize animations
-const { initBioTextAnimation } = usePortfolioBioAnimation()
-const { initSkillsAnimation } = useSkillsAnimation()
-
-onMounted(async () => {
-  if (portfolioBioRef.value) {
-    // Initialize the synchronized bio and skills animation
-    await initBioTextAnimation(portfolioBioRef.value)
-    
-    // Initialize hover animations for skills
-    await initSkillsAnimation(portfolioBioRef.value.querySelector('.portfolio-skills'))
-  }
-})
-</script>
 
 <style scoped>
 
@@ -104,11 +86,7 @@ onMounted(async () => {
  
 }
 
-/* Add styles for animated words */
-.bio p :deep(.bio-word) {
-  display: inline-block;
-  margin-right: 0.1em;
-}
+
 
 .portfolio-skills {
   display: flex;

@@ -42,7 +42,6 @@ onMounted(() => {
       display: grid;
     grid-template-rows: auto 1fr;
     will-change: width;
-    width: 65vw;
   background: linear-gradient(100deg, 
     #08090d 0%,
     #111318 25%,
@@ -143,7 +142,7 @@ onMounted(() => {
 .project-preview {
     grid-row: 2;
     display: flex;
-    width: 80%;
+    width: 75%;
     justify-self: center;
     margin-bottom: -2.5%; /* Add negative spacing effect*/
 }
