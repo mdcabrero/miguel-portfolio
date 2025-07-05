@@ -1,9 +1,15 @@
 <template>
     <article class="project-card" ref="projectCardRef">
-        <div class="project-bio">
-            <h2 class="project-title">{{ project.title }}</h2>
-            <p class="project-description">{{ project.description }}</p>
+
+        <header class="project-bio">
+        <div class="bio-divider"> 
+            <h2 class="project-title">{{ project.title }}  </h2>
+            <span class="click-cue"> 
+             &#x25C9; Live Site 
+            </span>
         </div>
+            <p class="project-description">{{ project.description }} </p>
+        </header>
         
         <div class="project-preview">
             <img :alt="`${project.title} project preview`" :src="project.image" class="project-image">
@@ -19,10 +25,6 @@ defineProps({
     project: {
         type: Object,
         required: true
-    },
-     index: {
-        type: Number,
-        default: 0
     }
 })
 
@@ -40,8 +42,12 @@ onMounted(() => {
 .project-card {
     position: relative;
       display: grid;
+      margin-inline: auto;
     grid-template-rows: auto 1fr;
     will-change: width;
+    transform: translateZ(0); /* Force GPU acceleration */
+    backface-visibility: hidden;
+    cursor: pointer;
   background: linear-gradient(100deg, 
     #08090d 0%,
     #111318 25%,
@@ -79,6 +85,7 @@ onMounted(() => {
     mask-composite: exclude;
     opacity: 1;
 
+
 }
 
 
@@ -101,15 +108,11 @@ onMounted(() => {
 }
 
 
-
-
-
-
-
-
 .project-card:not(:first-child) {
-    margin-top: 10rem;
+    margin-top: 8rem;
 }
+
+
 
 
 
@@ -117,10 +120,32 @@ onMounted(() => {
 .project-bio {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-block: 4rem;
+    gap: 0.5rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
     margin-inline: 4rem;
 }
+
+.bio-divider {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.click-cue {
+    display: inline-flex;
+    gap: 0.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+   color: #d1d8e8d8;
+    text-shadow:
+      0 0 4.5px #7795d1;
+
+    
+}
+
 
 .project-title {
     color: #EDEEF0;
@@ -129,6 +154,15 @@ onMounted(() => {
      text-shadow:
       0 0 3px #e0e9ee5d,
       0 0 4.5px #0b49c5;
+}
+
+.arrow-redirect {
+    opacity: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 0.5rem;
+    transition: 0.5s ease-out;
+
+
 }
 
 
@@ -142,9 +176,16 @@ onMounted(() => {
 .project-preview {
     grid-row: 2;
     display: flex;
-    width: 75%;
-    justify-self: center;
-    margin-bottom: -2.5%; /* Add negative spacing effect*/
+    width: 70%;
+    margin-inline: auto;
+    margin-bottom: -2rem;
+    transition: filter 0.65s ease-in;
 }
+
+.project-card:hover .project-preview {
+  filter: saturate(165%) brightness(110%);
+}
+
+
 
 </style>

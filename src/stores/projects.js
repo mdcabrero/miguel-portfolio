@@ -19,7 +19,7 @@ export const useProjectsStore = defineStore('projects', () => {
             id: 2,
             title: 'GLOBL Tech',
             description: 'Another amazing project description',
-            image: globlMockup
+            image: hundredMockup
         },
         {
             id: 3,

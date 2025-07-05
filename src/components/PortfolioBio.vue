@@ -1,5 +1,5 @@
 <template>
- <section  ref="portfolioBioRef" class="portfolio-bio"> 
+ <section  class="portfolio-bio" ref="portfolioBioRef"> 
     <div class="bio">
       <span> About </span>
       <p>
@@ -63,7 +63,17 @@
 </template>
 
 
+<script setup>
+import { ref, onMounted } from 'vue'
+import { usePortfolioBioFadeBlur } from '@/utils/animations.js' // Choose your animation
 
+const portfolioBioRef = ref(null)
+const { initPortfolioBioAnimation } = usePortfolioBioFadeBlur()
+
+onMounted(() => {
+    initPortfolioBioAnimation(portfolioBioRef.value)
+})
+</script>
 
 
 <style scoped>
@@ -83,6 +93,7 @@
   line-height: 1.2;
   margin-top: 0.75rem;
   font-weight: 300;
+  will-change: opacity;
  
 }
 
@@ -122,23 +133,25 @@
   gap: 1.5rem;
   align-items: center;
   justify-content: end;
+  transition: filter 0.35s ease;
 }
+
 
 .skill-icon {
   width: 3.5rem;
   height: 4.5rem;
-  object-fit: contain;
   filter: grayscale(100%);
-  transition: filter 0.3s ease;
+  object-fit: contain;
+  transition: filter 0.4s ease, transform 0.5s ease;
+  transform: scale(1);
 }
 
-/* Hover effect: remove grayscale when hovering over the skill row handled by GSAP now, left as fallback
-
+/* Standard hover effect for regular icons */
 .skill-row:hover .skill-icon {
-  filter: brightness(100%) grayscale(0%);
+  filter:  grayscale(0%);
+  transform: scale(1.02);
 }
 
-*/
 
 /* Size adjustments for some particular icons */
 
@@ -167,12 +180,23 @@
   filter: brightness(75%);
 }
 
+.skill-row:hover .midjourney {
+  filter: brightness(100%);
+  transform: scale(1.03);
+}
 
+
+
+/* AI icon specific styles */
 .ai-icon {
   width: 3.75rem;
   height: 3.25rem;
   filter: brightness(75%);
-  transition: filter 0.3s ease;
+}
+
+.skill-row:hover .ai-icon {
+  filter: brightness(100%);
+  transform: scale(1.02);
 }
 
 

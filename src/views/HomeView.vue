@@ -19,7 +19,6 @@ const projects = projectsStore.getAllProjects
      v-for="project in projects" 
             :key="project.id"
             :project="project"
-            :index="index"
             />
     <PortfolioBio />
   </main>
