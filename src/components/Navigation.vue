@@ -3,8 +3,8 @@
         <img class="logo" src="../assets/graphics/miguel-logo.svg"> 
 
         <ul class="nav-contacts">
-            <li><a href="#" class="nav-link">Email</a></li>
-            <li><a href="#" class="nav-link">LinkedIn</a></li>
+            <li><a href="mailto:mdcabrero@proton.me" class="nav-link">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/migueldominguezcab" class="nav-link">LinkedIn</a></li>
         </ul>
         
     </nav>

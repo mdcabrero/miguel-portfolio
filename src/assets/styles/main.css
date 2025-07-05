@@ -43,9 +43,8 @@ main {
     margin-block: 15%;
 }
 
-.portfolio-bio {
-    margin-inline: auto;
-  margin-top: 12.5rem;
+#portfolio-bio {
+  margin-top: 12rem;
   max-width: 70%;
 }
 

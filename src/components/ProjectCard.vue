@@ -1,5 +1,5 @@
 <template>
-    <article class="project-card" ref="projectCardRef">
+    <article class="project-card" ref="projectCardRef" @click="$emit('cardClick')">
 
         <header class="project-bio">
         <div class="bio-divider"> 
@@ -28,6 +28,9 @@ defineProps({
     }
 })
 
+
+
+
 const projectCardRef = ref(null)
 const { initProjectCardAnimation } = useProjectCardAnimation()
 
@@ -41,8 +44,7 @@ onMounted(() => {
 
 .project-card {
     position: relative;
-      display: grid;
-      margin-inline: auto;
+    display: grid;
     grid-template-rows: auto 1fr;
     will-change: width;
     transform: translateZ(0); /* Force GPU acceleration */
@@ -63,6 +65,7 @@ onMounted(() => {
                 inset 0 1.25px 0 rgba(149, 164, 224, 0.55),
                 inset 0 -3px 0 rgba(24, 30, 66, 0.25);
         }
+
 
 .project-card::before {
     content: '';
@@ -111,9 +114,6 @@ onMounted(() => {
 .project-card:not(:first-child) {
     margin-top: 8rem;
 }
-
-
-
 
 
 
@@ -176,7 +176,7 @@ onMounted(() => {
 .project-preview {
     grid-row: 2;
     display: flex;
-    width: 70%;
+    width: 75%;
     margin-inline: auto;
     margin-bottom: -2rem;
     transition: filter 0.65s ease-in;

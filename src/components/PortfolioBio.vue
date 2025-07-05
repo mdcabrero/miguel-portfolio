@@ -1,7 +1,7 @@
 <template>
- <section  class="portfolio-bio" ref="portfolioBioRef"> 
+ <section  id="portfolio-bio" ref="portfolioBioRef"> 
     <div class="bio">
-      <span> About </span>
+      <span id="section-title"> About </span>
       <p>
         Interdisciplinary product researcher & designer, currently reading curating and listening to
        I love to use lots of interactive design, 3D, behavioral based research, and other experimental elements to create ideal launches
@@ -77,6 +77,7 @@ onMounted(() => {
 
 
 <style scoped>
+
 
 .bio {
   margin-bottom: 4rem;

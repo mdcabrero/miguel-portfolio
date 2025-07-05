@@ -27,22 +27,22 @@ export function useProjectCardAnimation() {
       ease: 'none', // Linear easing for smooth scroll-linked animation
       scrollTrigger: {
         trigger: cardElement,
-        start: 'top 70%',
-        end: '70% bottom',
+        start: 'top 30%',
+        end: '90% 90%',
         scrub: 1 // Link animation to scroll position
       }
     })
 
-        const hoverAnimation = gsap.fromTo(clickCue, {
+     const hoverAnimation = gsap.fromTo(clickCue, {
       opacity: 0,
       filter: 'blur(6px)'
     }, {
       opacity: 1,
       filter: 'blur(0px)',
       y: 0,
-      duration: 0.9,
+      duration: 0.8,
       ease: 'power2.out',
-      delay: 1,
+      delay: 0.5,
       paused: true
     })
     
@@ -63,15 +63,16 @@ export function usePortfolioBioFadeBlur() {
     // Separate text elements from images
     const textElements = bioElement.querySelectorAll('p, h2, h3, span, div')
     const imageElements = bioElement.querySelectorAll('img')
+    const portfolioBio = document.getElementById('portfolio-bio')
+
     
-    if (!textElements.length && !imageElements.length) return
 
     // Create a timeline to synchronize both animations
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: bioElement,
-        start: "top 45%",
-        end: "bottom 90%",
+        trigger: portfolioBio,
+        start: "top+=132 33%",
+        end: "bottom 70%",
         scrub: false,
         toggleActions: "play none none reverse",
       }
@@ -80,11 +81,11 @@ export function usePortfolioBioFadeBlur() {
     // Add text animation with blur effect
       tl.fromTo(textElements, {
         opacity: 0,
-        filter: "blur(7px)"
+        filter: "blur(5px)"
       }, {
         opacity: 1,
         filter: "blur(0px)",
-        duration: 1.2,
+        duration: 1,
         ease: "power2.out",
         stagger: {
           each: 0.1,
@@ -98,13 +99,13 @@ export function usePortfolioBioFadeBlur() {
         opacity: 0
       }, {
         opacity: 1,
-        duration: 1,
+        duration: 0.9,
         ease: "power2.out",
         stagger: {
-          each: 0.2,
+          each: 0.17,
           from: "start"
         }
-      }, 0.25) // Start at time 0 (same time as text)
+      }, 0.2) // Start at time 0 (same time as text)
   }
 
   return { initPortfolioBioAnimation }

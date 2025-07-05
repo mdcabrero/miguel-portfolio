@@ -10,6 +10,10 @@ import { useProjectsStore } from '@/stores/projects.js'
 const projectsStore = useProjectsStore()
 const projects = projectsStore.getAllProjects
 
+const handleProjectClick = (project) => {
+    window.open(project.url, '_blank', 'noopener,noreferrer')
+}
+
 </script>
 
 <template>
@@ -19,6 +23,7 @@ const projects = projectsStore.getAllProjects
      v-for="project in projects" 
             :key="project.id"
             :project="project"
+            @card-click="handleProjectClick(project)"
             />
     <PortfolioBio />
   </main>
